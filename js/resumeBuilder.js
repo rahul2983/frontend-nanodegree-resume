@@ -68,14 +68,14 @@ var work = {
             "title": "Web Developer",
             "location": "San Francisco CA",
             "dates": "2014 - Current",
-            "description": "Web Design of Something"
+            "description": "Web Design of ABC Corp Home Page"
         },
         {
             "employer": "XYZ Corp",
             "title": "Web Developer",
             "location": "San Francisco CA",
             "dates": "2013 - 2014",
-            "description": "Web Design of Something"
+            "description": "Web Design of Online Inventory System for XYZ Corp"
         }
     ]
 };
@@ -86,13 +86,13 @@ var projects = {
             "title": "PC to PC Fiber Optic Communication",
             "dates": "2014-current",
             "description": "Designed a Fiber Optic Cable Network and developed firmware for two PCs to transfer data from one PC to another through the fiber optic cable",
-            "images": ["images/197x148.gif"]
+            "images": ["images/197x148.gif", "images/197x148.gif"]
         },
         {
             "title": "License Plate Recognition System",
             "dates": "2012-2014",
             "description": "Designed a License Plate Recognition System that captures a license plate image and runs an algorithm on the image to extract the License Number, run it through a DB and fetch the driver's information",
-            "images": ["images/197x148.gif"]
+            "images": ["images/197x148.gif", "images/197x148.gif"]
         }
     ]
 };
@@ -161,10 +161,8 @@ projects.display = function(){
         if (projects.projects[project].images.length > 0){
             for (image in projects.projects[project].images){
                 var formattedImages = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-             
+                $(".project-entry:last").append(formattedImages);
             }
-            $(".project-entry:last").append(formattedImages);
-
         }
         
     }
